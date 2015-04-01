@@ -1,0 +1,34 @@
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/">
+                    <?=Zend_Registry::get('appName')?> (commentaires d'actus chaudes)
+                  </a>
+                </div>
+                <div class="navbar-header  ">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a>
+                            Nombre de visiteurs :<span class="badge">4</span> 
+                             </a>
+                        </li>
+                        <li>
+                            <a>
+                            Nombre de commentaires : <span class="badge">3526</span> 
+                             </a>
+                        </li>
+                        <?php if(APPLICATION_ENV == 'development') :?>
+                        <li>
+                            <a>
+                                <span class="visible-xs">XS</span> 
+                                <span class="visible-sm">SM</span> 
+                                <span class="visible-md">MD</span> 
+                                <span class="visible-lg">LG</span> 
+                                <span class="visible-print">PRINT</span> 
+                             </a>
+                        </li>
+                        <?php endif;?>
+                    </ul>
+                </div>  
+            </div>
+        </nav>

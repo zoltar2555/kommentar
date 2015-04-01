@@ -1,0 +1,55 @@
+<!-- AFFICHE LA LISTE DES ACTUALITES -->
+<ul class="media-list">
+    <?php foreach ($this->actu->fetchall() as $actu) :?>
+    <li class="media">
+       
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" src="/img/<?=$actu->image?>.jpg" alt="<?=$actu->image?>">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><?=$actu->titre?></h4>
+          <?=$actu->contenu?>
+        </div>
+        <div class="media-right">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#commentaireModal" data-titre="<?=$actu->titre?>">
+                  <input type="hidden" data-id-actu="<?=$actu->id?>">
+                  <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Commentez    
+            </button>
+
+        </div>
+    </li>
+     <?php endforeach;?>
+</ul>
+<?php echo $this->partial('actualite/modal-commentaire.phtml').PHP_EOL;?>
+
+<script type="text/javascript">
+    /*
+    $('#envoi_commentaire').click(function(e){
+        $.post('/commentaire/ajout',{
+            actu : ,
+            auteur : $("#auteur_commentaire").val(),
+            contenu $("#contenu_commentaire").val() 
+        },
+        function(){
+            console.log("ok");
+        });
+        ($("#actu_commentaire").val(),  , );
+        
+    });*/
+    
+    $('#commentaireModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var contenu = button.data('titre'); // Extract info from data-* attributes
+        var id_actu = button.children('input');
+        console.log(id_actu);
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this);
+        modal.find('.modal-title').html('<b>Nouveau commentaire !</b><br> Actu : <i>' + contenu + '</i>');
+        modal.find('.modal-body input').attr('placeholder', 'Entrez un nom');
+        modal.find('.modal-body textarea').attr('placeholder', 'Entrez un commentaire ici puis validez...');
+    });
+
+</script>

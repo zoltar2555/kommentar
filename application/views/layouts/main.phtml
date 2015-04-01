@@ -1,0 +1,27 @@
+<?php header('content-Type: text/html; charset=UTF-8')?>
+<?php echo $this->doctype().PHP_EOL?>
+<html>
+    <head>
+        <?php 
+            echo $this->headTitle(Zend_Registry::get('appName')).PHP_EOL;
+            echo $this->headMeta()->setIndent(8).PHP_EOL;
+            echo $this->headLink()->setIndent(8).PHP_EOL;
+            echo $this->headStyle()->setIndent(8).PHP_EOL;
+            echo $this->headScript()->setIndent(8).PHP_EOL;
+        ?>
+    </head>
+    <body>
+        <?php echo $this->partial('navigation.phtml').PHP_EOL;?>
+        <div class="row">
+            <div class="hidden-xs col-sm-2" style="padding: 1.5em;">
+        <?php echo $this->partial('menu.phtml').PHP_EOL;?>
+            </div>
+            <div class=" col-sm-8 col-md-7" style=" padding: 1.5em;">
+               
+        <?php echo $this->layout()->content.PHP_EOL;?>       
+
+            </div>
+        </div>
+         <?php   echo $this->partial('footer.phtml').PHP_EOL;?>
+    </body>
+</html>

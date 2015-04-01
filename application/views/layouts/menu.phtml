@@ -1,0 +1,11 @@
+<div class="list-group">
+    <?php foreach(Zend_Registry::get('modules') as $module) :?>
+    <a href="<?=$module->routes?>" class="list-group-item <?= ($module->routes == $this->url()) ? 'active' : '' ;?>">
+        <h5 class="list-group-item-heading">
+        <span class="glyphicon glyphicon-<?=$module->img?>"></span>
+        <?=$module->name?>
+        </h5>
+        <p class="list-group-item-text">exemple de texte</p>
+    </a>
+    <?php endforeach;?>
+</div>
