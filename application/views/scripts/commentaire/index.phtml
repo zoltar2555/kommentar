@@ -1,8 +1,21 @@
-<?php
+<!-- AFFICHE LA LISTE DES COMMENTAIRES -->
+<ul class="media-list">
+    <?php foreach ($this->comment->fetchall() as $comment) :?>
+    <li class="media">
+       
+        <div class="media-left">
+        
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><?=$comment->auteur?></h4>
+          <?=$comment->commentaire?>
+        </div>
+        <div class="media-right">
+          
+                      
+            <?=$comment->date?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+        </div>
+    </li>
+     <?php endforeach;?>
+</ul>

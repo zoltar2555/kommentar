@@ -6,8 +6,9 @@
         <h4 class="modal-title" id="actu_commentaire"></h4>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="form-group">
+        <form id="form_commentaire">
+          <div class="form-group" >
+              <span id="id_actu" hidden/></span>
             <label for="recipient-name" class="control-label">Auteur :</label>
             <input type="text" class="form-control" id="auteur_commentaire">
           </div>
@@ -19,7 +20,7 @@
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        <button type="submit" id="envoi_commentaire" class="btn btn-primary">Envoyer le commentaire</button>
+        <button type="submit" id="envoi_commentaire" data-dismiss="modal" class="btn btn-primary">Envoyer le commentaire</button>
       </div>
     </div>
   </div>

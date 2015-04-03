@@ -32,6 +32,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
   protected function _initModulesInfo ()
   {
       $_modinfo = new Zend_Config_Ini( APPLICATION_PATH . '/configs/modules.ini', 'modules');
+     
       Zend_Registry::set('modules', $_modinfo->mod);
      
   }

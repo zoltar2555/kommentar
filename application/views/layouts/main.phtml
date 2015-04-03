@@ -17,8 +17,19 @@
         <?php echo $this->partial('menu.phtml').PHP_EOL;?>
             </div>
             <div class=" col-sm-8 col-md-7" style=" padding: 1.5em;">
-               
-        <?php echo $this->layout()->content.PHP_EOL;?>       
+                <div class="row" style="padding: 1em;">
+                    
+                   <ul class="nav nav-tabs" >
+                        <li role="presentation" class="active"><a href="#">Sport</a></li>
+                        <li role="presentation"><a href="#">Economie</a></li>
+                        <li role="presentation"><a href="#">Finance</a></li>
+                    </ul>
+                </div>
+                <div class="row" style="padding: 1em;">
+                    
+                      <?php echo $this->layout()->content.PHP_EOL;?>     
+                </div>
+        
 
             </div>
         </div>
